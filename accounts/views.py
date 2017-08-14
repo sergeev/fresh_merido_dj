@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import logout
 
 # Create your views here.
 def home(request):
@@ -13,13 +14,35 @@ def home(request):
     args = {'myName': name, 'numbers': numbers}
     return render(request, 'accounts/home.html')
 
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+
+
+def logout(request):
+    logout(request)
+
+    return logout(request, 'accounts/login.html')
+
+# Логика регистрации на сайте /account/
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/account')
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
     else:
         form = UserCreationForm()
-        args = {'form': form}
-        return render(request, 'accounts/reg_form.html', args)
+    return render(request, 'accounts/reg_form.html', {'form': form})
+
+            #form.save()
+            #return redirect('/account/')
+        #return HttpResponseRedirect('account')
+
+        #return render_to_response('accounts/reg_form.html',  {'form': form}, content_instance = RequestContext(request))
+        #form = UserCreationForm()
+        #args = {'form': form}
+        #return render(request, 'accounts/reg_form.html', args)

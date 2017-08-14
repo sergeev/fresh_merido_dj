@@ -6,6 +6,6 @@ from django.contrib.auth.views import login, logout
 urlpatterns = [
     url(r'^$', views.home),
     url(r'^login/$', login, {'template_name': 'accounts/login.html'}),
-    url(r'^logout/$', login, {'template_name': 'accounts/logout.html'}),
+    url(r'^logout/$', views.logout, name = 'logout'),
     url(r'^register/$', views.register, name = 'register'),
 ]
