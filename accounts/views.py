@@ -26,23 +26,14 @@ def logout(request):
 # Логика регистрации на сайте /account/
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserCreationForm(request.POST or None)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+        return render(request, '/account/')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/reg_form.html', {'form': form})
-
-            #form.save()
-            #return redirect('/account/')
-        #return HttpResponseRedirect('account')
-
-        #return render_to_response('accounts/reg_form.html',  {'form': form}, content_instance = RequestContext(request))
-        #form = UserCreationForm()
-        #args = {'form': form}
-        #return render(request, 'accounts/reg_form.html', args)

@@ -1,4 +1,4 @@
-"""meridiandj URL Configuration
+"""meridiancore URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,11 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from meridiandj import views
+from meridiancore import views
 
 urlpatterns = [
-    #url(r'^$', include('meridiancore.urls')),
-    url(r'^$', views.login_redirect, name = 'login_redirect'),
-    url(r'^account/', include('accounts.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.IndexView.as_view(), name = 'home_page'),
 ]
