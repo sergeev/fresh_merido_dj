@@ -2,16 +2,17 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 # Создаем модель для news
-class News(models.Model):
-    class Meta:
-        # описываем название базы данных под себя
-        db_table = "news"
-    news_title = models.CharField(max_lenght = 200)
-    news_content = models.TextField(max_lenght = 10000)
-    news_alies = models.CharField(max_lenght = 200)
-    news_date_created = models.DataTimeField()
-    new_created_by_user =
-    news_likes = models.Integer()
+# class News(models.Model):
+#     class Meta:
+#         # описываем название базы данных под себя
+#         db_table = "news"
+#     title = models.CharField()
+#     content = models.TextField()
+#     alies = models.CharField()
+#     date_created = models.DataTimeField()
+#     created_by_user = models.OneToOneField(User)
+#     likes = models.IntegerField()

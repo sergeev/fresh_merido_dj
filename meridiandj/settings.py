@@ -37,13 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # приложения проекта meridian
-    # основное "ядро" на нем базируется весь сайт
     'meridiancore',
-    # приложение работа с учетными записями
     'accounts',
-    # приложение работы с новостями на сайте
     'news',
 ]
 
@@ -129,3 +124,6 @@ STATIC_URL = '/static/'
 
 #account login redirect link
 LOGIN_REDIRECT_URL = '/account/'
+#delete this code for release project!.
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587

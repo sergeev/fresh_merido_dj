@@ -1,0 +1,14 @@
+{% extends 'defaults.html' %}
+{% block head %}
+<title>Профиль</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <form class="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'defaults.html' %}
+{% block head %}
+<meta charset="utf-8">
+{% endblock %}
+{% block body %}
+<div class="container">
+  <h1>Профиль</h1>
+  {% if user.is_authenticated %}
+  <p>Добро пожаловать, <b>{{ user.username }}</b>. Спасибо что вошли в систему.</p>
+
+  <p><b>Ваши данные.</b></p>
+  <p>Ваш логин: {{ user.username }}</p>
+  <p>Ваше Имя: {{ user.first_name }}</p>
+  <p>Ваша Фамилия: {{ user.last_name }}</p>
+  <p>Ваш Email: {{ user.email }}</p>
+  <p></p>
+  {% else %}
+  <p>Добро пожаловать. Пожалуйста <a http ="/account/login">Войдите.</a> в систему!.</p>
+  {% endif %}
+</div>
+{% endblock %}
