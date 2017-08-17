@@ -18,8 +18,9 @@ from django.contrib import admin
 from meridiandj import views
 
 urlpatterns = [
-    #url(r'^$', include('meridiancore.urls')),
-    url(r'^$', views.login_redirect, name = 'login_redirect'),
+    # glogal website page /meridiancore/*
+    url(r'^$', views.home_page_global, name = 'home_page_global'),
+    #url(r'^$', views.login_redirect, name = 'login_redirect'),
     url(r'^account/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
 ]
