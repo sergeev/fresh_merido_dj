@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    "/meridiancore/static"
+]
+
 #account login redirect link
 LOGIN_REDIRECT_URL = '/account/'
 #delete this code for release project!.
