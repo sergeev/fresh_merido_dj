@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
     'meridiancore',
     'accounts',
     'news',
@@ -131,3 +133,20 @@ LOGIN_REDIRECT_URL = '/account/'
 #delete this code for release project!.
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+CKEDITOR_CONFIGS = {
+     'default': {
+     'toolbar': 'Full',
+     'height': 500,
+     'width': 900,
+     'extraPlugins':'codesnippet',
+     },
+}
+
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_BROWSE_SHOW_DIRS = True
