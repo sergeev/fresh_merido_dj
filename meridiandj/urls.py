@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from meridiandj import views
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     # glogal website page /meridiancore/*

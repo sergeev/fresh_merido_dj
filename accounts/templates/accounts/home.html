@@ -1,12 +1,34 @@
-{% extends 'defaults.html' %}
-{% block head %}
-{% if user.is_authenticated %}
-<p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-{% else %}
-<p>Welcome, new user. Please <a http ="/account/login">log in.</a></p>
-{% endif %}
-<meta charset="utf-8">
-{% endblock %}
-{% block body %}
-<h1>Home</h1>
-{% endblock %}
+{% extends 'meridian/default.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block announce_main %}
+    {% endblock %}
+    {% block page_main %}
+    <div class="row">
+      <div class="col-sm-12 blog-main">
+        {% if user.is_authenticated %}
+          <p>Добро пожаловать, <b>{{ user.username }}</b>. Спасибо что вошли в систему.</p>
+
+          <p><b>Ваши данные.</b></p>
+          <p>Ваш логин: {{ user.username }}</p>
+          <p>Ваше Имя: {{ user.first_name }}</p>
+          <p>Ваша Фамилия: {{ user.last_name }}</p>
+          <p>Ваш Email: {{ user.email }}</p>
+            <a href="/account/logout" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Выйти</a>
+            <a href="/account/profile/edit/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Редактировать данные</a>
+            <a href="./change-password" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Сменить пароль</a>
+            {% else %}
+          <p>Приветствую, новый пользователь. Пожалуйста <a http ="/account/login">Войдите.</a></p>
+        {% endif %}
+        <div class="blog-post">
+          </div><!-- /.blog-post -->
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>
