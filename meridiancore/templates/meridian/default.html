@@ -1,14 +1,13 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
-  {% block head_main %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static "/images/favicon.gif" %}">
-      <title>{% block title %}{% endblock %}</title>
+      <title></title>
     <link href="{% static "/css/bootstrap.css" %}" rel="stylesheet">
     <link href="{% static "/css/carousel.css" %}" rel="stylesheet">
     <link href="{% static "/css/font-awesome.css" %}" rel="stylesheet">
@@ -23,10 +22,7 @@
     <script src="{% static "/js/tether.min.js" %}"></script>
     <script src="{% static "/js/ie10-viewport-bug-workaround.js" %}"></script>
   </head>
-  {% endblock %}
-  {% block body_main %}
   <body>
-  {% block top_menu %}
     <nav class="navbar navbar-inverse fixed-top bg-inverse navbar-toggleable-md">
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,9 +57,7 @@
         </div>
       </div>
     </nav>
-  {% endblock %}
   <!-- corusel is here! -->
-  {% block courusel_main %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -111,34 +105,28 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    {% endblock %}
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-    {% block content_main %}
+
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-12 col-md-9">
-          {% block breadcrumb %}
           <div class="btn-group btn-breadcrumb">
               <a href="#" class="btn btn-default"><i class="fa fa-home"></i></a>
               <a href="#" class="btn btn-default">Snippets</a>
               <a href="#" class="btn btn-default">Breadcrumbs</a>
               <a href="#" class="btn btn-default">Default</a>
-          </div>
-          {% endblock %}
-          <br><br>
+          </div><br><br>
           <p class="float-right hidden-md-up">
             <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
           </p>
-          {% block announce_main %}
           <div class="jumbotron">
             <h1>Hello, world!</h1>
             <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
           </div>
-          {% endblock %}
-          {% block page_main %}
           <div class="row">
             <div class="col-sm-12 blog-main">
 
@@ -208,9 +196,8 @@
 
             </div><!-- /.blog-main -->
           </div><!--/row-->
-          {% endblock %}
         </div><!--/span-->
-        {% block sidebar_main %}
+
         <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
           <div class="nav-side-menu">
             <div class="brand">Brand Logo 1</div>
@@ -466,14 +453,11 @@
 
 
         </div><!--/sidebar-->
-        {% endblock %}
       </div><!--/row-->
     </div>
-    {% endblock %}
     <br>
       <!-- FOOTER -->
       <!--footer start from here-->
-      {% block footer_main %}
       <footer>
           <div class="container">
             <div class="row">
@@ -517,9 +501,7 @@
             </div>
           </div>
       </footer>
-      {% endblock %}
       <!--footer start from here-->
-      {% block copyright_main %}
       <div class="copyright">
         <div class="container">
           <div class="col-md-6">
@@ -527,7 +509,5 @@
           </div>
         </div>
       </div>
-      {% endblock %}
   </body>
-  {% endblock %}
 </html>

@@ -16,13 +16,13 @@ from django.utils.translation import ugettext_lazy as _
 @python_2_unicode_compatible
 class Author(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
-                                verbose_name=_('Пользователь'))
-    name = models.CharField(_('Отображаемое Имя'), max_length=300)
-    photo = models.ImageField(_('Фотография'), blank=True, null=True)
+                                verbose_name=_('User'))
+    name = models.CharField(_('Displayed name'), max_length=300)
+    photo = models.ImageField(_('Photo'), blank=True, null=True)
 
     class Meta:
-        verbose_name = _('Автор')
-        verbose_name_plural = _('Авторы')
+        verbose_name = _('Author')
+        verbose_name_plural = _('Authors')
 
     def __str__(self):
         return '{} ({})'.format(self.name, self.user)
@@ -45,19 +45,19 @@ class CategoryManager(models.Manager):
 class Category(models.Model):
     WEIGHT_CHOICES = tuple((i, i) for i in range(-10, 10))
 
-    name = models.CharField(_('Название'), max_length=200)
-    slug = models.SlugField(_('Слаг'), unique=True)
-    description = models.TextField(_('Описание'), blank=True)
+    name = models.CharField(_('Name'), max_length=200)
+    slug = models.SlugField(_('Slug'), unique=True)
+    description = models.TextField(_('Description'), blank=True)
     weight = models.IntegerField(
-        _('Порядок'), choices=WEIGHT_CHOICES, default=0,
-        help_text=_('Определяет порядок категории, чем меньше тем выше.')
+        _('Weight'), choices=WEIGHT_CHOICES, default=0,
+        help_text=_('Weight controls order of categories in menus')
     )
 
     objects = CategoryManager()
 
     class Meta:
-        verbose_name = _('Категорию')
-        verbose_name_plural = _('Категории')
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
         ordering = ('-weight', 'id')
 
     def __str__(self):
