@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016, Evgeny Barbashov
+# This file is distributed under the same license as the django-simple-news-app package.
+# Evgeny Barbashov <evgenybarbashov@yandex.ru>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-11 14:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Evgeny Barbashov <evgenybarbashov@yandex.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: apps.py:10
+msgid "News"
+msgstr "Новости"
+
+#: models.py:16
+msgid "User"
+msgstr "Пользователь"
+
+#: models.py:17
+msgid "Displayed name"
+msgstr "Отображаемое имя"
+
+#: models.py:18
+msgid "Photo"
+msgstr "Фото"
+
+#: models.py:21 models.py:81
+msgid "Author"
+msgstr "Автор"
+
+#: models.py:22
+msgid "Authors"
+msgstr "Авторы"
+
+#: models.py:45
+msgid "Name"
+msgstr "Название"
+
+#: models.py:46 models.py:87
+msgid "Slug"
+msgstr "Slug"
+
+#: models.py:47
+msgid "Description"
+msgstr "Описание"
+
+#: models.py:49
+msgid "Weight"
+msgstr "Вес категории"
+
+#: models.py:50
+msgid "Weight controls order of categories in menus"
+msgstr "От веса зависит порядок категорий в меню и списках"
+
+#: models.py:56 models.py:83
+msgid "Category"
+msgstr "Категория"
+
+#: models.py:57
+msgid "Categories"
+msgstr "Категории"
+
+#: models.py:86
+msgid "Title"
+msgstr "Заголовок"
+
+#: models.py:88
+msgid "Subtitle"
+msgstr "Подзаголовок"
+
+#: models.py:89
+msgid "Abstract"
+msgstr "Аннотация"
+
+#: models.py:90
+msgid "Text"
+msgstr "Текст"
+
+#: models.py:93
+msgid "Active"
+msgstr "Активна"
+
+#: models.py:94
+msgid "Show entry in news feed"
+msgstr "Отображать запись на сайте"
+
+#: models.py:97
+msgid "Date"
+msgstr "Дата публикации"
+
+#: models.py:98
+msgid "Show entry only starting from this date"
+msgstr "Запись начнет отображаться на сайте только с указанной даты"
+
+#: models.py:101
+msgid "Created"
+msgstr "Дата создания"
+
+#: models.py:102
+msgid "Updated"
+msgstr "Дата обновления"
+
+#: models.py:107
+msgid "Entry"
+msgstr "Запись"
+
+#: models.py:108
+msgid "Entries"
+msgstr "Записи"

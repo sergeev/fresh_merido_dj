@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'meridiandj.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'meridiandj.urls'
@@ -126,6 +127,13 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     "/meridiancore/static"
+]
+
+LOGIN_URL = '/account/login/'
+
+LOGIN_EXEMPT_URLS = [
+    r'^account/logout/$',
+    r'^account/register/$',
 ]
 
 #account login redirect link
