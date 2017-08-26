@@ -15,7 +15,7 @@ Decorator for views that checks that the user passes the given test,
     that takes the user object and returns True if the user passes.
 """
 
-@login_required
+
 def home(request):
     #return HttpResponse("Welcome this is you first Django view page! :)")
     # accounts/templates/accounts/login.html
@@ -47,7 +47,7 @@ def register(request):
         args = {'form': form}
         return render(request, 'accounts/reg_form.html', args)
 
-@login_required
+#@login_required
 def view_profile(request):
     args = {'user': request.user }
     return render(request, 'accounts/view_profile.html', args)
