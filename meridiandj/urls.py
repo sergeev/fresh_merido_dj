@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """meridiandj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,11 +17,19 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from meridiandj import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+"""
+    accounts используеться в шаблоне accounts/templates/accounts/home.html
+    <li><a href="{% url 'accounts:view_profile' %}">Профиль</a></li>
+    <li><a href="{% url 'accounts:edit_profile' %}">Изменить профиль</a></li>
+"""
 
 urlpatterns = [
     # glogal website page /meridiancore/*
     url(r'^$', views.home_page_global, name = 'home_page_global'),
     #url(r'^$', views.login_redirect, name = 'login_redirect'),
-    url(r'^account/', include('accounts.urls')),
+    url(r'^account/', include('accounts.urls', namespace = 'accounts')),
     url(r'^admin/', admin.site.urls),
 ]

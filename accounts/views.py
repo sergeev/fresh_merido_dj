@@ -9,6 +9,7 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 """
 Decorator for views that checks that the user passes the given test,
     redirecting to the log-in page if necessary. The test should be a callable
@@ -17,7 +18,6 @@ Decorator for views that checks that the user passes the given test,
 
 
 def home(request):
-    #return HttpResponse("Welcome this is you first Django view page! :)")
     # accounts/templates/accounts/login.html
     numbers = [1,2,3,4,5]
     name = 'MayssAkaVasia'
