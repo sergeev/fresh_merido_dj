@@ -64,7 +64,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('django_news:entry_list', kwargs={'slug': self.slug})
+        return reverse('news:entry_list', kwargs={'slug': self.slug})
 
     @cached_property
     def updated(self):
@@ -121,6 +121,6 @@ class Entry(models.Model):
         return '{}/{}'.format(self.category.name, self.title)
 
     def get_absolute_url(self):
-        return reverse('django_news:entry_detail',
+        return reverse('news:entry_detail',
                        kwargs={'slug': self.slug,
                                'category_slug': self.category.slug})

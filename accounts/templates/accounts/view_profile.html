@@ -4,6 +4,7 @@
 {% endblock %}
 {% block body %}
 <div class="container">
+  <p>{{ user.userprofile.image }}</p>
   <h1>Профиль</h1>
   {% if user.is_authenticated %}
   <p>Добро пожаловать, <b>{{ user.username }}</b>. Спасибо что вошли в систему.</p>
@@ -13,7 +14,10 @@
   <p>Ваше Имя: {{ user.first_name }}</p>
   <p>Ваша Фамилия: {{ user.last_name }}</p>
   <p>Ваш Email: {{ user.email }}</p>
-  <p></p>
+  <p>Профиль: {{ user.userprofile }}</p>
+  <p>Описание: {{ user.userprofile.description }}</p>
+  <p>Ваш город: {{ user.userprofile.city}}</p>
+  <p>Контактный телефон: {{ user.userprofile.phone }}</p>
   {% else %}
   <p>Добро пожаловать. Пожалуйста <a http ="/account/login">Войдите.</a> в систему!.</p>
   {% endif %}

@@ -13,6 +13,15 @@ class UserProfile(models.Model):
     city = models.CharField(max_length = 100, default = '')
     website = models.URLField(default = '')
     phone = models.IntegerField(default = '')
+    # создаем папку(profile_image) и загружаем туда изображения 
+    image = models.ImageField(upload_to = 'profile_image', blank = True)
+
+    """
+    Вывод пользователя, если не применять, пользователь будет скрыт!
+    UserProfile Object
+    """
+    def __str__(self):
+        return self.user.username
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):

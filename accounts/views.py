@@ -52,7 +52,7 @@ def view_profile(request):
     args = {'user': request.user }
     return render(request, 'accounts/view_profile.html', args)
 
-@login_required
+
 def edit_profile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST or None, instance = request.user)
