@@ -6,15 +6,21 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-# Create your models here.
+class UserProfileManager(models.Manager):
+    def get_queryset(self):
+        # фильтер
+        return super(UserProfileManager, self).get_queryset().filter(city = 'Moskow')
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     description = models.CharField(max_length = 100, default = '')
     city = models.CharField(max_length = 100, default = '')
     website = models.URLField(default = '')
     phone = models.IntegerField(default = '')
-    # создаем папку(profile_image) и загружаем туда изображения 
+    # создаем папку(profile_image) и загружаем туда изображения
     image = models.ImageField(upload_to = 'profile_image', blank = True)
+
+    # пример обращения к фильтру
+    Moskow = UserProfileManager()
 
     """
     Вывод пользователя, если не применять, пользователь будет скрыт!
