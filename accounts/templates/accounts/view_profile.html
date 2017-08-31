@@ -4,9 +4,9 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-  <p>{{ user.userprofile.image }}</p>
   <h1>Профиль</h1>
   {% if user.is_authenticated %}
+  <img src = "{{ user.userprofile.image.url }}" width = "240">
   <p>Добро пожаловать, <b>{{ user.username }}</b>. Спасибо что вошли в систему.</p>
 
   <p><b>Ваши данные.</b></p>

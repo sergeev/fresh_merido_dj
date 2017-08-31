@@ -130,7 +130,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# обратите внимание на эти настройки! если они неверны, огромная вероятность
+# того что изображения не будут работать!
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/')
 
 STATICFILES_DIRS = [
     "/meridiancore/static"
