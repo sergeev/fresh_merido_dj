@@ -29,7 +29,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # glogal website page /meridiancore/*
     url(r'^$', views.home_page_global, name = 'home_page_global'),
-    #url(r'^$', views.login_redirect, name = 'login_redirect'),
+    url(r'^$', views.login_redirect, name = 'login_redirect'),
     url(r'^account/', include('accounts.urls', namespace = 'accounts')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -2,10 +2,11 @@
 # coding=utf-8
 from __future__ import absolute_import, unicode_literals
 
-from ckeditor_uploader.fields import RichTextUploadingField
+#from ckeditor_uploader.fields import RichTextUploadingField
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
+from django.contrib.auth.models import User
 from django.db.models import Max
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import cached_property
@@ -15,8 +16,7 @@ from django.utils.translation import ugettext_lazy as _
 
 @python_2_unicode_compatible
 class Author(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL,
-                                verbose_name=_('User'))
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, verbose_name=_('User'), on_delete=models.DO_NOTHING)
     name = models.CharField(_('Displayed name'), max_length=300)
     photo = models.ImageField(_('Photo'), blank=True, null=True)
 
@@ -88,15 +88,15 @@ class EntryManager(models.Manager):
 @python_2_unicode_compatible
 class Entry(models.Model):
     author = models.ForeignKey(Author, verbose_name=_('Author'),
-                               related_name='entries')
+                               related_name='entries', on_delete=models.DO_NOTHING)
     category = models.ForeignKey(Category, verbose_name=_('Category'),
-                                 related_name='entries')
+                                 related_name='entries', on_delete=models.DO_NOTHING)
 
     title = models.CharField(_('Title'), max_length=200)
     slug = models.SlugField(_('Slug'))
     subtitle = models.CharField(_('Subtitle'), max_length=400, blank=True)
     abstract = models.CharField(_('Abstract'), max_length=1000, blank=True)
-    text = RichTextUploadingField(_('Text'))
+    #text = RichTextUploadingField(_('Text'))
 
     active = models.BooleanField(
         verbose_name=_('Active'), default=True,

@@ -11,7 +11,7 @@ class UserProfileManager(models.Manager):
         # фильтер
         return super(UserProfileManager, self).get_queryset().filter(city = 'Moskow')
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.CharField(max_length = 100, default = '')
     city = models.CharField(max_length = 100, default = '')
     website = models.URLField(default = '')
